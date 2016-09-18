@@ -121,7 +121,7 @@ def blrObjFunction(initialWeights, *args):
     error_grad1 = theta - labeli
     error_grad1 = np.multiply(x, error_grad1)
     error_grad = np.sum(error_grad1, axis=0) / float(x.shape[0])
-    # HINT: Do not forget to add the bias term to your input data
+   
 
     return error, error_grad
 
@@ -150,7 +150,7 @@ def blrPredict(W, data):
         label[i] = np.argmax(temp[i])
 
     label = label.reshape(label.shape[0], 1)
-    # HINT: Do not forget to add the bias term to your input data
+
 
     return label
 
@@ -186,7 +186,7 @@ def mlrObjFunction(params, *args):
     print ("error", error)
     error_grad = (np.dot(x.T,np.subtract(theta, labeli)))/float(n_data)
     error_grad = error_grad.flatten()
-    # HINT: Do not forget to add the bias term to your input data
+    
 
     return error, error_grad
 
@@ -215,7 +215,7 @@ def mlrPredict(W, data):
         label[i] = np.argmax(temp[i])
 
     label = label.reshape(label.shape[0], 1)
-    # HINT: Do not forget to add the bias term to your input data
+
 
     return label
 
@@ -373,10 +373,7 @@ print('\n Validation set Accuracy:' + str(100*clf.score(validation_data, validat
 print('\n Testing set Accuracy:' + str(100*clf.score(test_data, testlabel)) + '%')
 
 
-"""
-Script for Extra Credit Part
-"""
-# FOR EXTRA CREDIT ONLY
+
 W_b = np.zeros((n_feature + 1, n_class))
 initialWeights_b = np.zeros((n_feature + 1, n_class))
 opts_b = {'maxiter': 100}
